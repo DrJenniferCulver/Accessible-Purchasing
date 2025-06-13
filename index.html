@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide to Digital Accessibility Exceptions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0D1B2A;
+            color: #E0E1DD;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .card {
+            background-color: #1B263B;
+            border: 1px solid #415A77;
+        }
+        .text-accent { color: #FCA311; }
+        .bg-accent { background-color: #FCA311; }
+        .border-accent { border-color: #FCA311; }
+
+        .flowchart-step {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            text-align: center;
+        }
+        .flowchart-arrow {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 0.5;
+            min-width: 40px;
+        }
+        .flowchart-arrow::after {
+            content: '→';
+            font-size: 2rem;
+            color: #778DA9;
+        }
+         @media (max-width: 767px) {
+            .flowchart-step, .flowchart-arrow {
+                width: 100%;
+                flex-basis: auto;
+            }
+            .flowchart-arrow::after {
+                content: '↓';
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12 md:mb-16">
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-4">The Path to Digital Inclusion</h1>
+            <p class="text-lg md:text-xl text-778DA9 max-w-3xl mx-auto">Understanding Why and How to Request an Exception for Non-Accessible Technology</p>
+        </header>
+
+        <main class="space-y-12 md:space-y-16">
+
+            <section id="why-it-matters">
+                 <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-white">Why Accessibility Can't Be an Afterthought</h2>
+                    <p class="text-lg text-778DA9 mt-2">Our commitment to inclusion is backed by legal and ethical standards.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="card rounded-lg shadow-lg p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-white">Legal Mandates are Clear</h3>
+                        <p class="mt-4 text-E0E1DD">Federal and state laws, including Title II of the <span class="text-accent font-semibold">Americans with Disabilities Act (ADA)</span>, require that public institutions provide equal access to all programs and services. This includes all digital tools and websites.</p>
+                        <div class="mt-6 p-4 bg-0D1B2A rounded-lg">
+                             <p class="font-semibold text-white">Key Standard: <span class="text-accent">WCAG 2.1 Level AA</span></p>
+                             <p class="text-sm text-778DA9 mt-1">This is the globally recognized benchmark for web accessibility that our institution and its technology must meet.</p>
+                        </div>
+                    </div>
+                    <div class="card rounded-lg shadow-lg p-6 md:p-8 flex flex-col items-center justify-center h-full">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-white mb-2">The Impact of Inaccessibility</h3>
+                            <p class="text-E0E1DD mb-4">Inaccessible tools create real barriers, excluding members of our community from essential educational and administrative resources.</p>
+                        </div>
+                         <div class="w-full chart-container h-64 md:h-80">
+                            <canvas id="disabilityProportionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="process-flow">
+                 <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-white">The Exception Process: A Path to Managed Risk</h2>
+                    <p class="text-lg text-778DA9 mt-2">When a fully accessible tool isn't an option, a formal exception provides a structured, temporary solution.</p>
+                </div>
+                <div class="card rounded-lg shadow-lg p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row justify-between items-stretch gap-4">
+                        <div class="flowchart-step card p-4 rounded-lg"><div><span class="font-bold text-lg text-white">1. Initiate</span><p class="text-sm text-778DA9">Request is made during technology procurement.</p></div></div>
+                        <div class="flowchart-arrow"></div>
+                        <div class="flowchart-step card p-4 rounded-lg"><div><span class="font-bold text-lg text-white">2. Justify</span><p class="text-sm text-778DA9">Provide detailed reasoning and documentation.</p></div></div>
+                        <div class="flowchart-arrow"></div>
+                        <div class="flowchart-step card p-4 rounded-lg"><div><span class="font-bold text-lg text-white">3. Plan</span><p class="text-sm text-778DA9">Create a robust Alternate Access Plan (AAP).</p></div></div>
+                         <div class="flowchart-arrow"></div>
+                        <div class="flowchart-step card p-4 rounded-lg"><div><span class="font-bold text-lg text-white">4. Approve</span><p class="text-sm text-778DA9">Multiple stakeholders review and sign off.</p></div></div>
+                        <div class="flowchart-arrow"></div>
+                        <div class="flowchart-step card p-4 rounded-lg"><div><span class="font-bold text-lg text-white">5. Review</span><p class="text-sm text-778DA9">Exceptions are temporary (e.g., 1 year) and reviewed regularly.</p></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="risk-assessment">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-white">How We Measure Accessibility Risk</h2>
+                    <p class="text-lg text-778DA9 mt-2">A multi-factor score helps us objectively assess a tool's potential barriers.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="card rounded-lg shadow-lg p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-white">Anatomy of a Risk Score</h3>
+                        <p class="mt-4 text-E0E1DD">We don't just take a vendor's word for it. Our assessment combines their documentation (the VPAT) with hands-on testing to produce a total risk score. A higher score means a higher risk of inaccessibility.</p>
+                        <ul class="mt-6 space-y-3 list-disc list-inside text-E0E1DD">
+                            <li><span class="font-semibold text-white">VPAT Analysis:</span> We check if the vendor's report is complete, credible, and accurate.</li>
+                            <li><span class="font-semibold text-white">Keyboard Test:</span> We perform hands-on tests to see if the tool can be used without a mouse.</li>
+                            <li><span class="font-semibold text-white">Total Risk Score:</span> The combination of these factors gives a clear picture of the tool's accessibility.</li>
+                        </ul>
+                    </div>
+                    <div class="card rounded-lg shadow-lg p-6 md:p-8">
+                         <div class="chart-container">
+                            <canvas id="riskScoreChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="justification-and-aap">
+                 <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-white">Building Your Case for an Exception</h2>
+                    <p class="text-lg text-778DA9 mt-2">A strong request requires solid justification and a concrete plan for inclusion.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="card rounded-lg shadow-lg p-6 md:p-8">
+                        <h3 class="text-xl font-bold text-white mb-4">Common Justifications</h3>
+                        <p class="text-E0E1DD mb-4">You must document why an exception is unavoidable. This chart shows illustrative examples of primary justifications.</p>
+                        <div class="chart-container h-80">
+                            <canvas id="justificationChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card rounded-lg shadow-lg p-6 md:p-8">
+                        <h3 class="text-xl font-bold text-white mb-4">The Crucial Alternate Access Plan (AAP)</h3>
+                        <p class="text-E0E1DD mb-6">An approved exception is not a pass. You are still responsible for providing access. Your AAP outlines exactly how you will support users with disabilities.</p>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-lg text-white">🎓 For Students:</h4>
+                                <p class="text-778DA9">Your plan must detail how students will request and receive accommodations, often in partnership with the Student Disability Services office.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-white">💼 For Employees:</h4>
+                                <p class="text-778DA9">The plan must describe how reasonable accommodations will be provided to ensure employees can perform their job functions, coordinated with HR/ADA offices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="aap-brainstormer" class="mt-12 md:mt-16">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-white">✨ AAP Brainstormer ✨</h2>
+                    <p class="text-lg text-778DA9 mt-2">Let AI help you draft initial ideas for your Alternate Access Plan.</p>
+                </div>
+                <div class="card rounded-lg shadow-lg p-6 md:p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="toolName" class="block text-E0E1DD text-sm font-bold mb-2">Non-Accessible Tool Name:</label>
+                            <input type="text" id="toolName" class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-0D1B2A border-415A77" placeholder="e.g., Online Quiz System">
+                        </div>
+                        <div>
+                            <label for="toolFunction" class="block text-E0E1DD text-sm font-bold mb-2">Tool's Primary Function:</label>
+                            <input type="text" id="toolFunction" class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-0D1B2A border-415A77" placeholder="e.g., Delivering timed quizzes to students">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="affectedUsers" class="block text-E0E1DD text-sm font-bold mb-2">Who will be primarily affected?</label>
+                            <select id="affectedUsers" class="shadow border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-0D1B2A border-415A77">
+                                <option value="students">Students</option>
+                                <option value="employees">Faculty/Staff</option>
+                                <option value="both">Both Students and Faculty/Staff</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="accessibilityBarriers" class="block text-E0E1DD text-sm font-bold mb-2">Known Accessibility Barriers (optional):</label>
+                            <textarea id="accessibilityBarriers" class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-0D1B2A border-415A77 h-24" placeholder="e.g., Not keyboard navigable, no captions for videos, poor color contrast"></textarea>
+                        </div>
+                    </div>
+                    <button id="generateAAPBtn" class="mt-6 bg-accent hover:bg-opacity-80 text-darkBlue font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out w-full md:w-auto">
+                        Generate AAP Ideas ✨
+                    </button>
+                    <div id="loadingIndicator" class="mt-4 text-center text-accent hidden">
+                        Generating ideas, please wait...
+                    </div>
+                    <div id="aapOutput" class="mt-6 p-4 bg-0D1B2A rounded-lg border border-415A77 text-E0E1DD whitespace-pre-wrap hidden">
+                        <!-- AAP ideas will be displayed here -->
+                    </div>
+                    <div id="errorDisplay" class="mt-4 p-4 bg-red-600 text-white rounded-lg hidden">
+                        <!-- Error messages will be displayed here -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="justification-generator" class="mt-12 md:mt-16">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-white">✨ Justification Generator ✨</h2>
+                    <p class="text-lg text-778DA9 mt-2">Get AI-powered suggestions for your accessibility exception justification.</p>
+                </div>
+                <div class="card rounded-lg shadow-lg p-6 md:p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="justificationToolName" class="block text-E0E1DD text-sm font-bold mb-2">Non-Accessible Tool Name:</label>
+                            <input type="text" id="justificationToolName" class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-0D1B2A border-415A77" placeholder="e.g., Specialized Lab Software">
+                        </div>
+                        <div>
+                            <label for="justificationToolFunction" class="block text-E0E1DD text-sm font-bold mb-2">Tool's Core Purpose:</label>
+                            <input type="text" id="justificationToolFunction" class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-0D1B2A border-415A77" placeholder="e.g., High-fidelity scientific simulations">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="justificationBarriers" class="block text-E0E1DD text-sm font-bold mb-2">Specific Accessibility Barriers:</label>
+                            <textarea id="justificationBarriers" class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-0D1B2A border-415A77 h-24" placeholder="e.g., Cannot be used with screen readers, critical features only accessible via mouse, no text alternatives for graphical elements"></textarea>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="justificationReason" class="block text-E0E1DD text-sm font-bold mb-2">Why is an exception needed?</label>
+                            <select id="justificationReason" class="shadow border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-0D1B2A border-415A77">
+                                <option value="no_alternative">No accessible alternative exists</option>
+                                <option value="undue_burden">Compliance would cause undue burden (cost/difficulty)</option>
+                                <option value="limited_use">Limited, non-essential individual use</option>
+                                <option value="unique_functionality">Unique functionality with no equivalent accessible alternative</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="generateJustificationBtn" class="mt-6 bg-accent hover:bg-opacity-80 text-darkBlue font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out w-full md:w-auto">
+                        Generate Justification ✨
+                    </button>
+                    <div id="justificationLoadingIndicator" class="mt-4 text-center text-accent hidden">
+                        Crafting justification, please wait...
+                    </div>
+                    <div id="justificationOutput" class="mt-6 p-4 bg-0D1B2A rounded-lg border border-415A77 text-E0E1DD whitespace-pre-wrap hidden">
+                        <!-- Justification ideas will be displayed here -->
+                    </div>
+                    <div id="justificationErrorDisplay" class="mt-4 p-4 bg-red-600 text-white rounded-lg hidden">
+                        <!-- Error messages will be displayed here -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="alternative-suggester" class="mt-12 md:mt-16">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-white">✨ Accessible Alternative Suggester ✨</h2>
+                    <p class="text-lg text-778DA9 mt-2">Discover potential accessible features or tool types based on your needs.</p>
+                </div>
+                <div class="card rounded-lg shadow-lg p-6 md:p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="altToolFunction" class="block text-E0E1DD text-sm font-bold mb-2">Non-Accessible Tool's Core Function:</label>
+                            <input type="text" id="altToolFunction" class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-0D1B2A border-415A77" placeholder="e.g., Online collaboration for group projects">
+                        </div>
+                        <div>
+                            <label for="altBarriers" class="block text-E0E1DD text-sm font-bold mb-2">Key Accessibility Barriers (if known):</label>
+                            <input type="text" id="altBarriers" class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-0D1B2A border-415A77" placeholder="e.g., No keyboard support, inaccessible PDF viewer">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="requiredFunctionality" class="block text-E0E1DD text-sm font-bold mb-2">Crucial Features an Alternative Must Have (optional):</label>
+                            <textarea id="requiredFunctionality" class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-0D1B2A border-415A77 h-24" placeholder="e.g., Real-time document editing, secure file sharing, video conferencing with live captions"></textarea>
+                        </div>
+                    </div>
+                    <button id="suggestAlternativesBtn" class="mt-6 bg-accent hover:bg-opacity-80 text-darkBlue font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out w-full md:w-auto">
+                        Suggest Alternatives ✨
+                    </button>
+                    <div id="altLoadingIndicator" class="mt-4 text-center text-accent hidden">
+                        Searching for ideas, please wait...
+                    </div>
+                    <div id="altOutput" class="mt-6 p-4 bg-0D1B2A rounded-lg border border-415A77 text-E0E1DD whitespace-pre-wrap hidden">
+                        <!-- Alternative suggestions will be displayed here -->
+                    </div>
+                    <div id="altErrorDisplay" class="mt-4 p-4 bg-red-600 text-white rounded-lg hidden">
+                        <!-- Error messages will be displayed here -->
+                    </div>
+                </div>
+            </section>
+            
+            <section id="finding-alternatives">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-white">The Real Goal: Avoid Exceptions Entirely</h2>
+                    <p class="text-lg text-778DA9 mt-2">Be a champion for accessibility by prioritizing inclusive tools from the start.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card rounded-lg p-6 text-center">
+                        <div class="text-5xl mb-4">✅</div>
+                        <h3 class="text-xl font-bold text-white">Vet Early & Often</h3>
+                        <p class="mt-2 text-778DA9">Make accessibility a primary requirement in your search, not an afterthought. Ask for accessibility reports (VPATs) upfront.</p>
+                    </div>
+                    <div class="card rounded-lg p-6 text-center">
+                        <div class="text-5xl mb-4">🤝</div>
+                        <h3 class="text-xl font-bold text-white">Engage Vendors</h3>
+                        <p class="mt-2 text-778DA9">Use your purchasing power. Urge vendors to fix accessibility issues and choose those who prioritize inclusion.</p>
+                    </div>
+                     <div class="card rounded-lg p-6 text-center">
+                        <div class="text-5xl mb-4">💡</div>
+                        <h3 class="text-xl font-bold text-white">Consult Experts</h3>
+                        <p class="mt-2 text-778DA9">Partner with the university's accessibility team. They can help you assess tools and find compliant solutions.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="universal-design" class="mt-12 md:mt-16">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-white">Accessibility for All: The Power of Universal Design</h2>
+                    <p class="text-lg text-778DA9 mt-2">Designing for accessibility from the start creates better experiences for everyone, not just those with disabilities.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="card rounded-lg shadow-lg p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-white">Beyond Compliance: Designing for Everyone</h3>
+                        <p class="mt-4 text-E0E1DD">Universal Design is a framework for creating products and environments that are usable by all people, to the greatest extent possible, without the need for adaptation or specialized design. It anticipates diverse user needs from the outset.</p>
+                        <ul class="mt-6 space-y-3 list-disc list-inside text-E0E1DD">
+                            <li><span class="font-semibold text-white">Equitable Use:</span> Design is useful and marketable to people with diverse abilities.</li>
+                            <li><span class="font-semibold text-white">Flexible Use:</span> Design accommodates a wide range of individual preferences and abilities.</li>
+                            <li><span class="font-semibold text-white">Simple & Intuitive:</span> Use of the design is easy to understand, regardless of user experience, knowledge, language skills, or concentration level.</li>
+                        </ul>
+                    </div>
+                    <div class="card rounded-lg shadow-lg p-6 md:p-8 flex flex-col items-center justify-center h-full">
+                        <div class="text-center mb-4">
+                            <h3 class="text-2xl font-bold text-white mb-2">Accessibility Benefits Everyone</h3>
+                            <p class="text-E0E1DD">Features designed for accessibility often provide broad benefits to all users.</p>
+                        </div>
+                        <div class="flex flex-col gap-4 w-full">
+                            <div class="bg-0D1B2A p-3 rounded-lg border border-415A77 flex items-start space-x-3">
+                                <span class="text-4xl flex-shrink-0">🔠</span>
+                                <div class="flex-grow">
+                                    <p class="font-semibold text-white">Captions</p>
+                                    <p class="text-sm text-778DA9">Help in noisy environments or when multitasking.</p>
+                                </div>
+                            </div>
+                            <div class="bg-0D1B2A p-3 rounded-lg border border-415A77 flex items-start space-x-3">
+                                <span class="text-4xl flex-shrink-0">♿</span>
+                                <div class="flex-grow">
+                                    <p class="font-semibold text-white">Ramps & Curb Cuts</p>
+                                    <p class="text-sm text-778DA9">Benefit strollers, luggage, and delivery personnel.</p>
+                                </div>
+                            </div>
+                            <div class="bg-0D1B2A p-3 rounded-lg border border-415A77 flex items-start space-x-3">
+                                <span class="text-4xl flex-shrink-0">⌨️</span>
+                                <div class="flex-grow">
+                                    <p class="font-semibold text-white">Keyboard Navigation</p>
+                                    <p class="text-sm text-778DA9">Increases efficiency for power users and developers.</p>
+                                </div>
+                            </div>
+                            <div class="bg-0D1B2A p-3 rounded-lg border border-415A77 flex items-start space-x-3">
+                                <span class="text-4xl flex-shrink-0">🗣️</span>
+                                <div class="flex-grow">
+                                    <p class="font-semibold text-white">Clear Language</p>
+                                    <p class="text-sm text-778DA9">Assists non-native speakers and those with cognitive differences.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-16 pt-8 border-t border-415A77">
+            <p class="text-778DA9">This guide provides a general framework for the accessibility exception process. Procedures may vary. <br> Always consult your institution's specific policies and accessibility office.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const COLORS = {
+                accent: '#FCA311',
+                lightGray: '#778DA9',
+                mediumGray: '#415A77',
+                darkBlue: '#1B263B',
+                platinum: '#E0E1DD',
+                white: '#FFFFFF'
+            };
+
+            function wrapLabels(label, maxWidth) {
+                if (typeof label !== 'string' || label.length <= maxWidth) {
+                    return label;
+                }
+                const words = label.split(' ');
+                let lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+                        lines.push(currentLine);
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                });
+                if (currentLine.length > 0) {
+                    lines.push(currentLine);
+                }
+                return lines;
+            }
+
+            const universalTooltipCallback = {
+                plugins: {
+                    tooltip: {
+                        backgroundColor: '#0D1B2A',
+                        titleColor: COLORS.white,
+                        bodyColor: COLORS.platinum,
+                        borderColor: COLORS.accent,
+                        borderWidth: 1,
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    },
+                    legend: {
+                        labels: {
+                            color: COLORS.platinum
+                        }
+                    }
+                }
+            };
+            
+            new Chart(document.getElementById('disabilityProportionChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Population without a disability', 'Population with a disability'],
+                    datasets: [{
+                        label: 'Population Proportion',
+                        data: [74, 26],
+                        backgroundColor: [COLORS.mediumGray, COLORS.accent],
+                        borderColor: COLORS.darkBlue,
+                        borderWidth: 4,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    ...universalTooltipCallback,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        ...universalTooltipCallback.plugins,
+                        title: {
+                            display: true,
+                            text: '1 in 4 Adults in the U.S. Have a Disability',
+                            color: COLORS.white,
+                            font: { size: 16 }
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('riskScoreChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Low Risk Tool', 'Medium Risk Tool', 'High Risk Tool'],
+                    datasets: [
+                        {
+                            label: 'VPAT Completion Score',
+                            data: [0, 1, 2],
+                            backgroundColor: '#415A77',
+                        },
+                        {
+                            label: 'VPAT Success Score',
+                            data: [1, 2, 3],
+                            backgroundColor: '#778DA9',
+                        },
+                         {
+                            label: 'VPAT/Keyboard Test Agreement',
+                            data: [0, 2, 2],
+                            backgroundColor: '#FCA311',
+                        },
+                        {
+                            label: 'Keyboard Test Failures',
+                            data: [0, 1, 3],
+                            backgroundColor: '#E0E1DD',
+                        }
+                    ]
+                },
+                options: {
+                    ...universalTooltipCallback,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            ticks: { color: COLORS.platinum },
+                            grid: { color: 'rgba(119, 141, 169, 0.2)' }
+                        },
+                        y: {
+                            stacked: true,
+                            beginAtZero: true,
+                            max: 10,
+                            title: {
+                                display: true,
+                                text: 'Total Accessibility Risk Score (Out of 10)',
+                                color: COLORS.platinum
+                            },
+                            ticks: { color: COLORS.platinum },
+                            grid: { color: 'rgba(119, 141, 169, 0.2)' }
+                        }
+                    }
+                }
+            });
+
+            const justificationLabels = [
+                'No commercially available accessible alternative exists', 
+                'Compliance would cause significant difficulty or expense', 
+                'Tool is for limited, non-required individual use'
+            ].map(label => wrapLabels(label, 16));
+            
+            new Chart(document.getElementById('justificationChart'), {
+                type: 'bar',
+                data: {
+                    labels: justificationLabels,
+                    datasets: [{
+                        label: 'Frequency of Justification (Illustrative)',
+                        data: [65, 25, 10],
+                        backgroundColor: [COLORS.accent, COLORS.mediumGray, COLORS.lightGray],
+                        borderColor: COLORS.accent,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    ...universalTooltipCallback,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                         x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '% of Requests (Illustrative)',
+                                color: COLORS.platinum
+                            },
+                            ticks: { color: COLORS.platinum },
+                            grid: { color: 'rgba(119, 141, 169, 0.2)' }
+                        },
+                        y: {
+                            ticks: { color: COLORS.platinum, font: {size: 10} },
+                             grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                       ...universalTooltipCallback.plugins,
+                       legend: {
+                           display: false
+                       }
+                   }
+                }
+            });
+
+            const generateAAPBtn = document.getElementById('generateAAPBtn');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const aapOutput = document.getElementById('aapOutput');
+            const errorDisplay = document.getElementById('errorDisplay');
+
+            generateAAPBtn.addEventListener('click', async () => {
+                const toolName = document.getElementById('toolName').value.trim();
+                const toolFunction = document.getElementById('toolFunction').value.trim();
+                const affectedUsers = document.getElementById('affectedUsers').value;
+                const accessibilityBarriers = document.getElementById('accessibilityBarriers').value.trim();
+
+                if (!toolName || !toolFunction) {
+                    errorDisplay.textContent = 'Please provide the tool name and its primary function.';
+                    errorDisplay.classList.remove('hidden');
+                    aapOutput.classList.add('hidden');
+                    return;
+                }
+
+                loadingIndicator.classList.remove('hidden');
+                generateAAPBtn.disabled = true;
+                aapOutput.classList.add('hidden');
+                errorDisplay.classList.add('hidden');
+
+                const prompt = `Generate a concise Alternate Access Plan (AAP) outline for a non-accessible digital tool. 
+                Focus on practical, actionable steps for providing equivalent access.
+
+                Tool Name: ${toolName}
+                Tool Function: ${toolFunction}
+                Primarily Affected Users: ${affectedUsers}
+                Known Accessibility Barriers: ${accessibilityBarriers || 'Not specified.'}
+
+                Provide the outline in a bulleted list format. Suggest general categories and specific examples of accommodations.`;
+
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        aapOutput.textContent = text;
+                        aapOutput.classList.remove('hidden');
+                    } else {
+                        errorDisplay.textContent = 'Failed to generate AAP ideas. Please try again.';
+                        errorDisplay.classList.remove('hidden');
+                    }
+                } catch (error) {
+                    errorDisplay.textContent = `An error occurred: ${error.message}. Please check your network connection and try again.`;
+                    errorDisplay.classList.remove('hidden');
+                } finally {
+                    loadingIndicator.classList.add('hidden');
+                    generateAAPBtn.disabled = false;
+                }
+            });
+
+            const generateJustificationBtn = document.getElementById('generateJustificationBtn');
+            const justificationLoadingIndicator = document.getElementById('justificationLoadingIndicator');
+            const justificationOutput = document.getElementById('justificationOutput');
+            const justificationErrorDisplay = document.getElementById('justificationErrorDisplay');
+
+            generateJustificationBtn.addEventListener('click', async () => {
+                const toolName = document.getElementById('justificationToolName').value.trim();
+                const toolFunction = document.getElementById('justificationToolFunction').value.trim();
+                const accessibilityBarriers = document.getElementById('justificationBarriers').value.trim();
+                const justificationReason = document.getElementById('justificationReason').value;
+
+                if (!toolName || !toolFunction || !justificationReason) {
+                    justificationErrorDisplay.textContent = 'Please provide the tool name, its core purpose, and select a reason for the exception.';
+                    justificationErrorDisplay.classList.remove('hidden');
+                    justificationOutput.classList.add('hidden');
+                    return;
+                }
+
+                justificationLoadingIndicator.classList.remove('hidden');
+                generateJustificationBtn.disabled = true;
+                justificationOutput.classList.add('hidden');
+                justificationErrorDisplay.classList.add('hidden');
+
+                let reasonText = '';
+                switch (justificationReason) {
+                    case 'no_alternative':
+                        reasonText = 'There are no commercially available accessible alternatives that meet the required functionality.';
+                        break;
+                    case 'undue_burden':
+                        reasonText = 'Achieving full accessibility for this tool would impose an undue financial and administrative burden.';
+                        break;
+                    case 'limited_use':
+                        reasonText = 'The tool is for limited, non-essential individual use where an alternative can be easily provided.';
+                        break;
+                    case 'unique_functionality':
+                        reasonText = 'This tool provides unique and critical functionality for which no equivalent accessible alternative exists, and its core features cannot be replicated through other means.';
+                        break;
+                }
+
+                const prompt = `Draft a concise justification statement for an accessibility exception for a digital tool.
+
+                Tool Name: ${toolName}
+                Tool's Core Purpose: ${toolFunction}
+                Specific Accessibility Barriers: ${accessibilityBarriers || 'Not specified.'}
+                Primary Reason for Exception: ${reasonText}
+
+                Focus on providing a brief, formal justification suitable for an exception request form.`;
+
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        justificationOutput.textContent = text;
+                        justificationOutput.classList.remove('hidden');
+                    } else {
+                        justificationErrorDisplay.textContent = 'Failed to generate justification. Please try again.';
+                        justificationErrorDisplay.classList.remove('hidden');
+                    }
+                } catch (error) {
+                    justificationErrorDisplay.textContent = `An error occurred: ${error.message}. Please check your network connection and try again.`;
+                    justificationErrorDisplay.classList.remove('hidden');
+                } finally {
+                    justificationLoadingIndicator.classList.add('hidden');
+                    generateJustificationBtn.disabled = false;
+                }
+            });
+
+            const suggestAlternativesBtn = document.getElementById('suggestAlternativesBtn');
+            const altLoadingIndicator = document.getElementById('altLoadingIndicator');
+            const altOutput = document.getElementById('altOutput');
+            const altErrorDisplay = document.getElementById('altErrorDisplay');
+
+            suggestAlternativesBtn.addEventListener('click', async () => {
+                const toolFunction = document.getElementById('altToolFunction').value.trim();
+                const accessibilityBarriers = document.getElementById('altBarriers').value.trim();
+                const requiredFunctionality = document.getElementById('requiredFunctionality').value.trim();
+
+                if (!toolFunction) {
+                    altErrorDisplay.textContent = 'Please describe the core function of the non-accessible tool.';
+                    altErrorDisplay.classList.remove('hidden');
+                    altOutput.classList.add('hidden');
+                    return;
+                }
+
+                altLoadingIndicator.classList.remove('hidden');
+                suggestAlternativesBtn.disabled = true;
+                altOutput.classList.add('hidden');
+                altErrorDisplay.classList.add('hidden');
+
+                const prompt = `Based on the following information about a non-accessible digital tool, suggest types of accessible alternative tools or specific accessible features that could address the barriers and fulfill the required functionality.
+
+                Tool's Core Function: ${toolFunction}
+                Key Accessibility Barriers: ${accessibilityBarriers || 'Not specified.'}
+                Crucial Features an Alternative Must Have: ${requiredFunctionality || 'Not specified.'}
+
+                Provide suggestions as a bulleted list. Think about different approaches to providing equivalent access.`;
+
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        altOutput.textContent = text;
+                        altOutput.classList.remove('hidden');
+                    } else {
+                        altErrorDisplay.textContent = 'Failed to suggest alternatives. Please try again.';
+                        altErrorDisplay.classList.remove('hidden');
+                    }
+                } catch (error) {
+                    altErrorDisplay.textContent = `An error occurred: ${error.message}. Please check your network connection and try again.`;
+                    altErrorDisplay.classList.remove('hidden');
+                } finally {
+                    altLoadingIndicator.classList.add('hidden');
+                    suggestAlternativesBtn.disabled = false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
